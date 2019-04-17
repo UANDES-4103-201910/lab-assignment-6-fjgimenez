@@ -1733,3 +1733,253 @@ Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
 NoMethodError (undefined method `save' for nil:NilClass):
   
 app/controllers/registrations_controller.rb:13:in `create'
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /home/fede/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/sign_in" for 127.0.0.1 at 2019-04-17 10:35:49 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RegistrationsController#new as HTML
+Completed 500 Internal Server Error in 235ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (super: no superclass method `new' for #<RegistrationsController:0x00007fdcb07fa640>):
+  
+app/controllers/registrations_controller.rb:4:in `new'
+Started GET "/sign_in" for 127.0.0.1 at 2019-04-17 10:36:43 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (285.3ms)
+Completed 200 OK in 980ms (Views: 977.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2019-04-17 10:36:57 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IngpY2JLFUx5cgBiaTEWDiB2b+sqCm/9hFuS2Bkg14PyiE+yiLwv5qqajm8tNMATyPeeYXHOHdjDcF8cTRNQrA==", "registrations"=>{"name"=>"a", "last_name"=>"a", "email"=>"a@a.com", "phone"=>"1", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 156ms (Views: 34.4ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-04-17 10:37:19 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :is_user_logged_in? rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-04-17 10:37:19 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 80ms (Views: 77.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-04-17 10:37:28 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cNVT6wVabktprQriRWD39LONoIwRHVvKCb5IYu4G9ZegJTU6761U4bpFhO8BZSHpWwxRBkrZKe9OlYWmujVyuA==", "session"=>{"email"=>"a@a.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+Completed 500 Internal Server Error in 150ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find_by_username' for #<Class:0x00007fdcb407fdd0>
+Did you mean?  find_by_sql):
+  
+app/controllers/sessions_controller.rb:7:in `create'
+Started GET "/" for 127.0.0.1 at 2019-04-17 10:38:18 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 103ms (Views: 100.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-04-17 10:38:22 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 91ms (Views: 86.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2019-04-17 10:38:35 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7GOCjzb9mIXYmRCiCRQbC0S9YkDph5rRCEFBmZOJKuDkSaD71/ajLoMIMQRm5jUG2gWf4X60GVbkS8pzYNaScQ==", "registrations"=>{"name"=>"a", "last_name"=>"a", "email"=>"a@a.com", "phone"=>"1", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (2.3ms)[0m  [1m[31mrollback transaction[0m
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 122ms (Views: 63.8ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2019-04-17 10:39:50 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Gb7/X3xfXqn92lJc08OWdGcF11HXk3IlXl/BXH7GQkTJTpmOlqhkAy4y3FGXxkBpj4Qm24xXAAAZdAyYKvXFaw==", "registrations"=>{"name"=>"a", "last_name"=>"a", "email"=>"a@a.com", "phone"=>"1", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 141ms (Views: 85.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-04-17 10:40:19 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :is_user_logged_in? rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-04-17 10:40:19 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 42ms (Views: 39.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-04-17 10:42:35 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 76ms (Views: 73.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2019-04-17 10:42:45 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ogIOhvXpo/2/RrnV6UHON2L6L27hnFPg8s7mmGOId7Fy8mhXHx6ZV2yuN9itRBgqinve5LpYIcW15StcN7vwng==", "registrations"=>{"name"=>"a", "last_name"=>"a", "email"=>"a", "phone"=>"1", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (4.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 158ms (Views: 98.1ms | ActiveRecord: 5.4ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /home/fede/.rvm/rubies/ruby-2.5.1/lib/ruby/site_ruby/2.5.0/rubygems/core_ext/kernel_require.rb:54)
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /home/fede/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/sign_in" for 127.0.0.1 at 2019-04-17 11:04:10 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (41.3ms)
+Completed 200 OK in 823ms (Views: 804.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2019-04-17 11:04:22 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fmyr32gMzCYJJ/wm4VFP+x5P5SSL/FOwzKkWWi9yLDyunM0Ogvv2jNrPciulVJnm9s4UrtA4IZWLgtuee0GrEw==", "registrations"=>{"name"=>"a", "last_name"=>"a", "email"=>"a@a.com", "phone"=>"1", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 147ms (Views: 73.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-04-17 11:04:38 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 118ms (Views: 115.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-04-17 11:04:44 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vZVRTL6cOX9h7woHeghYe/UDcR4mCJNfvoh3+VCT5gttZTedVGsD1bIHhAo+DY5mHYKAlH3M4Xr5o7o9BKBhJA==", "session"=>{"email"=>"a@a.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+Completed 500 Internal Server Error in 131ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find_by_username' for #<Class:0x00007f7590078bb0>
+Did you mean?  find_by_sql):
+  
+app/controllers/sessions_controller.rb:7:in `create'
+Started GET "/login" for 127.0.0.1 at 2019-04-17 11:19:08 -0400
+  
+SyntaxError (/home/fede/Desktop/lab-assignment-6-fjgimenez/config/routes.rb:19: syntax error, unexpected ',', expecting keyword_end
+  :users ,:controllers => { :registrati...
+         ^):
+  
+config/routes.rb:19: syntax error, unexpected ',', expecting keyword_end
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /home/fede/.rvm/rubies/ruby-2.5.1/lib/ruby/site_ruby/2.5.0/rubygems/core_ext/kernel_require.rb:54)
+Started GET "/login" for 127.0.0.1 at 2019-04-17 11:19:37 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 100ms (Views: 97.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-04-17 11:19:43 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 200ms (Views: 188.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2019-04-17 11:19:55 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4nHpkjlEiM2yvkWYBMPZQE8WvXXuJy/LO+RYtgIM9qzqW8vm2E+zZukvZD5rMfdN0a5A1HkUrEzX7tNc8VNOPQ==", "registrations"=>{"name"=>"a", "last_name"=>"a", "email"=>"a", "phone"=>"1", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 140ms (Views: 80.5ms | ActiveRecord: 8.5ms)
+
+
