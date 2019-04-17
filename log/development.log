@@ -1412,3 +1412,324 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.0ms)
 
 
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /home/fede/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/" for 127.0.0.1 at 2019-04-17 09:00:25 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (68.6ms)
+Completed 200 OK in 5162ms (Views: 5139.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-04-17 09:01:00 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lwHJbDT6Ck0xQy5lg+P1SkdbjTCWPc6SHSYEPLT71qVH8a+93g0w5+KroGjH5iNXr9p8us35vLdaDcn44MhRig==", "session"=>{"email"=>"a@a.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 141ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-04-17 09:01:29 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (99.9ms)
+Completed 200 OK in 174ms (Views: 172.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2019-04-17 09:01:57 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qjRcpvK0BxyNb0Le6kJ+Mnqh0+nB8tC2KFsl6b0pjeqiHn7SE788t9b+Y3iFsFA/5BkuSFbBUzHEUa4DTnY1ew==", "registrations"=>{"name"=>"a", "last_name"=>"a", "email"=>"a@a.com", "phone"=>"1", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+No template found for RegistrationsController#create, rendering head :no_content
+Completed 204 No Content in 106ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-04-17 09:02:10 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 67ms (Views: 64.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-04-17 09:02:19 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 57ms (Views: 54.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-04-17 09:02:28 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rcmg0ufh4tXO+5SY9DK0SUFj3tw8izsM6CJzphi65xt9OcYDDRbYfx0TGpWwN2JUqeIvVmdPSSmvCb5iTIlgNA==", "session"=>{"email"=>"a@a.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 101ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-04-17 09:26:04 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 112ms (Views: 109.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-04-17 09:26:08 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 72ms (Views: 69.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2019-04-17 09:26:23 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I5IIQTgaqZRIZN4iNzfkNJGq4BkHgV1cb29Pi32hmP0ruCo12RGSPxP1/4RYxco5DxIduJCy3tuDZcRhjv4gbA==", "registrations"=>{"name"=>"a", "last_name"=>"a", "email"=>"a@a.com", "phone"=>"1", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+No template found for RegistrationsController#create, rendering head :no_content
+Completed 204 No Content in 134ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-04-17 09:26:28 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 73ms (Views: 69.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2019-04-17 09:26:36 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VNJo7eOOCCykVdb7wJSR4mDQO1ybqNKV3ELTly+DDOeEIg48CXkyhne9WPaEkUf/iFHK1sBsoLCbaR5Te7CLyA==", "registrations"=>{"name"=>"", "last_name"=>"", "email"=>"", "phone"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+No template found for RegistrationsController#create, rendering head :no_content
+Completed 204 No Content in 119ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-04-17 09:26:42 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 68ms (Views: 66.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-04-17 09:26:50 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ei50d8uyiNq8a8N/09tIFM3q2PuzCSAlYRubw2S2YFSq3hKmIUWycG+DTXKX3p4JJWspcejNUgAmMFYHMIXnew==", "session"=>{"email"=>"a@a.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+Completed 500 Internal Server Error in 173ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `find_by_username' for #<Class:0x0000555e54c9a268>
+Did you mean?  find_by_sql):
+  
+app/controllers/sessions_controller.rb:7:in `create'
+Started GET "/" for 127.0.0.1 at 2019-04-17 09:41:05 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 67ms (Views: 65.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-04-17 09:41:09 -0400
+  
+SyntaxError (/home/fede/Desktop/lab-assignment-6-fjgimenez/app/controllers/registrations_controller.rb:27: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/registrations_controller.rb:27: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/sign_in" for 127.0.0.1 at 2019-04-17 09:42:22 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 68ms (Views: 65.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2019-04-17 09:42:36 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VjS/XuWG23Xjrhis/ITae0/XJxE3AGkhmkR/ZQ7v1SeGxNmPD3Hh3zBGlqG4gQxmp1bWm2zEGwTdb7KhWtxSCA==", "registrations"=>{"name"=>"a", "last_name"=>"a", "email"=>"a@a.com", "phone"=>"1", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+Completed 500 Internal Server Error in 610ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `sign_up_params' for #<RegistrationsController:0x00007f1d3c17bfa0>
+Did you mean?  signup_path):
+  
+app/controllers/registrations_controller.rb:8:in `create'
+Started GET "/sign_in" for 127.0.0.1 at 2019-04-17 09:45:16 -0400
+Processing by RegistrationsController#new as HTML
+Completed 500 Internal Server Error in 661ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `build_resource' for #<RegistrationsController:0x00007f1d3c32f748>):
+  
+app/controllers/registrations_controller.rb:4:in `new'
+Started GET "/sign_in" for 127.0.0.1 at 2019-04-17 09:49:37 -0400
+Processing by RegistrationsController#new as HTML
+Completed 500 Internal Server Error in 484ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `resource_class' for #<RegistrationsController:0x00007f1d3c55cd68>):
+  
+app/controllers/registrations_controller.rb:3:in `build_resource'
+app/controllers/registrations_controller.rb:7:in `new'
+Started GET "/sign_in" for 127.0.0.1 at 2019-04-17 09:51:45 -0400
+Processing by RegistrationsController#new as HTML
+Completed 500 Internal Server Error in 650ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `resource_class' for #<RegistrationsController:0x0000555e5430fdd8>):
+  
+app/controllers/registrations_controller.rb:3:in `build_resource'
+app/controllers/registrations_controller.rb:7:in `new'
+Started GET "/users/1" for 127.0.0.1 at 2019-04-17 09:54:29 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :is_user_logged_in? rendered or redirected
+Completed 302 Found in 766ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-04-17 09:54:30 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 79ms (Views: 69.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-04-17 10:01:25 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 69ms (Views: 66.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-04-17 10:01:31 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 79ms (Views: 73.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2019-04-17 10:01:41 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T6hnaTRHVN9E0CyfJ0g/Q8Td2WABv2AqkqWHkR99gKBHgkUd1UxvdB9BDTlIuhFOWmUkwZaM461+rwx77CI4MQ==", "registrations"=>{"name"=>"a", "last_name"=>"a", "email"=>"a@a.com", "phone"=>"1", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+Completed 500 Internal Server Error in 557ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `sign_up_params' for #<RegistrationsController:0x00007f1d40169a40>
+Did you mean?  signup_path):
+  
+app/controllers/registrations_controller.rb:8:in `create'
+Started GET "/sign_in" for 127.0.0.1 at 2019-04-17 10:10:10 -0400
+Processing by RegistrationsController#new as HTML
+Completed 500 Internal Server Error in 526ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `build_users' for #<RegistrationsController:0x00007f1d3c231a30>):
+  
+app/controllers/registrations_controller.rb:4:in `new'
+Started GET "/sign_in" for 127.0.0.1 at 2019-04-17 10:12:01 -0400
+Processing by RegistrationsController#new as HTML
+Completed 500 Internal Server Error in 448ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `build_users' for #<RegistrationsController:0x0000555e545a4af8>):
+  
+app/controllers/registrations_controller.rb:4:in `new'
+Started GET "/sign_in" for 127.0.0.1 at 2019-04-17 10:12:15 -0400
+Processing by RegistrationsController#new as HTML
+Completed 500 Internal Server Error in 601ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `build_users' for #<RegistrationsController:0x0000555e525a94d8>):
+  
+app/controllers/registrations_controller.rb:4:in `new'
+Started GET "/sign_in" for 127.0.0.1 at 2019-04-17 10:12:24 -0400
+Processing by RegistrationsController#new as HTML
+Completed 500 Internal Server Error in 491ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `build_users' for #<RegistrationsController:0x0000555e54b6d110>):
+  
+app/controllers/registrations_controller.rb:4:in `new'
+Started GET "/sign_in" for 127.0.0.1 at 2019-04-17 10:13:07 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 80ms (Views: 76.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2019-04-17 10:13:16 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+kcMTDCmMhPj8/TFRwOdXqbB0y57Zy5EIGoREX3edwgqt2qd2lEIuTAbesgDBktDTkAipCCjXGFnQdzVKe3wJw==", "registrations"=>{"name"=>"a", "last_name"=>"a", "email"=>"", "phone"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `save' for nil:NilClass):
+  
+app/controllers/registrations_controller.rb:13:in `create'
+Started GET "/sign_in" for 127.0.0.1 at 2019-04-17 10:13:21 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 120ms (Views: 117.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2019-04-17 10:13:32 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ka2V+5Li+JukPATvZlDQpcJWpOFN85CJP4tJ/+TqO99BXfMqeBXCMXfUiuIiVQa4KtdVaxY34qx4oIQ7sNm88A==", "registrations"=>{"name"=>"a", "last_name"=>"a", "email"=>"a@a.com", "phone"=>"1", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `save' for nil:NilClass):
+  
+app/controllers/registrations_controller.rb:13:in `create'
+Started GET "/sign_in" for 127.0.0.1 at 2019-04-17 10:14:05 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 68ms (Views: 65.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2019-04-17 10:14:16 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FUfNDvRHDE7qbm2cWr1f13SEv2s/2MCQEhkdKp3LHznFt6vfHrA25DmG45EeuInKnAVO4WQcsrVVMtDuyfiYFg==", "registrations"=>{"name"=>"a", "last_name"=>"a", "email"=>"a@a.com", "phone"=>"1", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `persisted?' for nil:NilClass):
+  
+app/controllers/registrations_controller.rb:15:in `create'
+Started GET "/sign_in" for 127.0.0.1 at 2019-04-17 10:15:31 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 66ms (Views: 63.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2019-04-17 10:15:43 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y5db+fRpPY0I0we/o1CqGlwFl517lmRxSCalyAVEixMbZz0oHp4HJ9s7ibLnVXwHtIRmFyBSFlQPDWgMUXcMPA==", "registrations"=>{"name"=>"a", "last_name"=>"a", "email"=>"a@a.com", "phone"=>"1", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `save' for nil:NilClass):
+  
+app/controllers/registrations_controller.rb:13:in `create'

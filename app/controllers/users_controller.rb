@@ -26,18 +26,41 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     #complete this method
+    @user = User.new(user_params)
+        if @user.save
+          session[:user_id] = @user.id
+          redirect_to '/home' 
+        else
+          redirect_to '/signup'
+        end
   end
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
     #complete this method
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to @users, notice: 'User was successfully updated.' }
+        format.json { render :show, status: :ok, location: @users }
+      else
+        format.html { render :edit }
+        format.json { render json: @users.errors, status: :unprocessable_entity }
+      end
+    end
+	render json: @user
   end
 
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
     #complete this method
+    @user.destroy
+    respond_to do |format|
+      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+	render json: @user
   end
 
   private
