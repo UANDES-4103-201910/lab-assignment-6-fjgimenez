@@ -5747,3 +5747,13 @@ ActionController::ActionControllerError (Cannot redirect to nil!):
   
 app/controllers/users_controller.rb:40:in `block (2 levels) in update'
 app/controllers/users_controller.rb:38:in `update'
+Started GET "/users/" for 127.0.0.1 at 2019-04-20 12:32:50 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 145ms (Views: 82.2ms | ActiveRecord: 1.6ms)
+
+
