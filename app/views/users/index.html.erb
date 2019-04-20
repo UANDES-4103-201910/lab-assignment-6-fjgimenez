@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+<% if @user_logged_in %>
 
 <h1>Users</h1>
 
@@ -12,7 +13,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.email %></td> 
+        <td><%= user.email %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -24,3 +25,9 @@
 <br>
 
 <%= link_to 'New User', new_user_path %>
+
+<%= link_to 'Log Out', logout_url %>
+
+<% else %>
+<h1> You have no permissions to view this page </h1>
+<% end %>

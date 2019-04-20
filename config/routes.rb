@@ -10,8 +10,6 @@ Rails.application.routes.draw do
   get '/sign_in' => 'registrations#new', as: :registrations
   post '/sign_in' => 'registrations#create', as: :sign_in
 
-  root 'welcome#index'
-
   get '/login' => 'sessions#new'
   get '/logout' => 'sessions#destroy'
   resources :sessions
@@ -19,7 +17,7 @@ Rails.application.routes.draw do
   get 'signup'  => 'users#new'
     resources :users
 
-  get '/home' => 'home#view'
+  get '/home' => 'welcome#index'
 
   get '/forsale' => 'forsale#view'
 
